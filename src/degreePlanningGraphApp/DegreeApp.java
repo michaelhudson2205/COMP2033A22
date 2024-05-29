@@ -81,5 +81,11 @@ public class DegreeApp
 			e.printStackTrace();
 		}
 		
+		// Initialise the adjacency list for all units
+		for (String unit : allUnits)
+		{
+			adjacencyList.put(unit, new ArrayList<>());
+		}
+		
 	} // >>>>>>>>>>end of psvm<<<<<<<<<<
 } // >>>>>>>>>>end of class DegreeApp<<<<<<<<<<
