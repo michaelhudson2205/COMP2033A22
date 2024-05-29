@@ -45,7 +45,41 @@ public class DegreeApp
 		Map<String, List<String>> unitPrerequisites = new HashMap<>();
 		Map<String, List<String>> adjacencyList = new HashMap<>();
 		
-		
+		// Read and prepare input file
+		try (BufferedReader br = new BufferedReader(new FileReader(path)))
+		{
+			String line;
+			boolean firstLine = true;
+			
+			while ((line = br.readLine()) != null)
+			{
+				if (firstLine)
+				{
+					// Capture the first line containing all units
+					allUnits = Arrays.stream(line.split(","))
+							.map(String::trim)
+							.collect(Collectors.toList());
+					firstLine = false;
+					continue; // Skip to next iteration to avoid processing the first line again
+				}
+				
+				// Split the line by commas to separate the unit code and its prerequisites
+				String[] parts = line.split(",");
+				String unitCode = parts[0].trim();
+				
+				List<String> prerequisites = Arrays.stream(parts)
+						.skip(1) // Skip the unit code
+						.map(String::trim) // Trim the leading and trailing spaces
+						.collect(Collectors.toList());
+				
+				// Store in the HashMap
+				unitPrerequisites.put(unitCode, prerequisites);
+			}
+		} // >>>>>>>>>>end of try block<<<<<<<<<<
+		catch (IOException e)
+		{
+			e.printStackTrace();
+		}
 		
 	} // >>>>>>>>>>end of psvm<<<<<<<<<<
 } // >>>>>>>>>>end of class DegreeApp<<<<<<<<<<
