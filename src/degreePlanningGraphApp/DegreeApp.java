@@ -40,5 +40,12 @@ public class DegreeApp
 		}
 		scanner.close();
 		
+		// Create data storage structures for processing of input file
+		List<String> allUnits = new ArrayList<>();
+		Map<String, List<String>> unitPrerequisites = new HashMap<>();
+		Map<String, List<String>> adjacencyList = new HashMap<>();
+		
+		
+		
 	} // >>>>>>>>>>end of psvm<<<<<<<<<<
 } // >>>>>>>>>>end of class DegreeApp<<<<<<<<<<
