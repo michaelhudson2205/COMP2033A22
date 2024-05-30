@@ -129,6 +129,12 @@ public class DegreeApp
 			// Allocate units to study periods
 			List<List<String>> studyPeriods = allocateUnitsToStudyPeriods(topologicalOrder, adjacencyList, maxUnits, longestPaths);
 			
+			// Ensure the order of the longest path units is maintained
+			for (List<String> longestPath : longestPaths)
+			{
+				ensureLongestPathOrder(studyPeriods, longestPath);
+			}
+			
 		} // >>>>>>>>>>end of topological sort actions<<<<<<<<<<
 		
 	} // >>>>>>>>>>end of psvm<<<<<<<<<<
