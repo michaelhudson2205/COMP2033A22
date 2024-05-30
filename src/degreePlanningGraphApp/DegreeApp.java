@@ -194,6 +194,14 @@ public class DegreeApp
 			}
 		}
 		
+		// Check if topological order contains all units (i.e., no cycles)
+		if (topologicalOrder.size() != allUnits.size())
+		{
+			return null;
+		}
+		
+		return topologicalOrder;
+		
 	} // >>>>>>>>>>end of topologicalSort method<<<<<<<<<<
 	
 } // >>>>>>>>>>end of class DegreeApp<<<<<<<<<<
