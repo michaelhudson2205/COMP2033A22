@@ -167,6 +167,16 @@ public class DegreeApp
 			}
 		}
 		
+		// Initialise queue with units having zero in-degrees
+		Queue<String> queue = new LinkedList<>();
+		for (Map.Entry<String, Integer> entry : inDegree.entrySet())
+		{
+			if (entry.getValue() == 0)
+			{
+				queue.add(entry.getKey());
+			}
+		}
+		
 	} // >>>>>>>>>>end of topologicalSort method<<<<<<<<<<
 	
 } // >>>>>>>>>>end of class DegreeApp<<<<<<<<<<
