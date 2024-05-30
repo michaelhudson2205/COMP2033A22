@@ -150,4 +150,14 @@ public class DegreeApp
 		
 	} // >>>>>>>>>>end of psvm<<<<<<<<<<
 	
+	private static List<String> topologicalSort(List<String> allUnits, Map<String, List<String>> adjacencyList)
+	{
+		Map<String, Integer> inDegree = new HashMap<>();
+		for (String unit : allUnits)
+		{
+			inDegree.put(unit, 0);
+		}
+		
+	} // >>>>>>>>>>end of topologicalSort method<<<<<<<<<<
+	
 } // >>>>>>>>>>end of class DegreeApp<<<<<<<<<<
