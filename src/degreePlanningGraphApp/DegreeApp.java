@@ -204,4 +204,12 @@ public class DegreeApp
 		
 	} // >>>>>>>>>>end of topologicalSort method<<<<<<<<<<
 	
+	private static List<List<String>> findAllLongestPaths(List<String> topologicalOrder, Map<String, List<String>> adjacencyList)
+	{
+		Map<String, Integer> longestDistances = new HashMap<>();
+		Map<String, String> predecessors = new HashMap<>();
+		List<List<String>> longestPaths = new ArrayList<>();
+		
+	} // >>>>>>>>>>end of findAllLongestPaths<<<<<<<<<<
+	
 } // >>>>>>>>>>end of class DegreeApp<<<<<<<<<<
