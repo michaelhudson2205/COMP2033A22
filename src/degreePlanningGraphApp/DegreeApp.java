@@ -158,6 +158,15 @@ public class DegreeApp
 			inDegree.put(unit, 0);
 		}
 		
+		// Populate in-degree map
+		for (Map.Entry<String, List<String>> entry : adjacencyList.entrySet())
+		{
+			for (String neighbour : entry.getValue())
+			{
+				inDegree.put(neighbour, inDegree.get(neighbour) + 1);
+			}
+		}
+		
 	} // >>>>>>>>>>end of topologicalSort method<<<<<<<<<<
 	
 } // >>>>>>>>>>end of class DegreeApp<<<<<<<<<<
