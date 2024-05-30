@@ -113,6 +113,18 @@ public class DegreeApp
 			{
 				System.out.println(entry.getKey() + ": " + entry.getValue());
 			}
+			
+			// Find and print the longest paths
+			List<List<String>> longestPaths = findAllLongestPaths(topologicalOrder, adjacencyList);
+			
+			for (int i = 0; i < longestPaths.size(); i++)
+			{
+				System.out.println("\nLongest Path " + (i + 1) + ":");
+				for (String unit : longestPaths.get(i))
+				{
+					System.out.println(unit);
+				}
+			}
 		}
 		
 	} // >>>>>>>>>>end of psvm<<<<<<<<<<
