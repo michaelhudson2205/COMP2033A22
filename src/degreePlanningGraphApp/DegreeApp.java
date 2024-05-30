@@ -177,6 +177,23 @@ public class DegreeApp
 			}
 		}
 		
+		// Process the queue
+		List<String> topologicalOrder = new ArrayList<>();
+		while (!queue.isEmpty())
+		{
+			String current = queue.poll();
+			topologicalOrder.add(current);
+			
+			for (String neighbour : adjacencyList.get(current))
+			{
+				inDegree.put(neighbour, inDegree.get(neighbour) - 1);
+				if (inDegree.get(neighbour) == 0)
+				{
+					queue.add(neighbour);
+				}
+			}
+		}
+		
 	} // >>>>>>>>>>end of topologicalSort method<<<<<<<<<<
 	
 } // >>>>>>>>>>end of class DegreeApp<<<<<<<<<<
