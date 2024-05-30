@@ -87,5 +87,15 @@ public class DegreeApp
 			adjacencyList.put(unit, new ArrayList<>());
 		}
 		
+		// Populate the adjacency list based on the unitPrerequisites map
+		for (Map.Entry<String, List<String>> entry : unitPrerequisites.entrySet())
+		{
+			String unit = entry.getKey();
+			for (String prerequisite : entry.getValue())
+			{
+				adjacencyList.get(prerequisite).add(unit);
+			}
+		}
+		
 	} // >>>>>>>>>>end of psvm<<<<<<<<<<
 } // >>>>>>>>>>end of class DegreeApp<<<<<<<<<<
