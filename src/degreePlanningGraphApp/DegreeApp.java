@@ -97,5 +97,16 @@ public class DegreeApp
 			}
 		}
 		
+		// Perform topological sort
+		List<String> topologicalOrder = topologicalSort(allUnits, adjacencyList);
+		if (topologicalOrder != null)
+		{
+			System.out.println("\nTopological Order:");
+			for (String unit : topologicalOrder)
+			{
+				System.out.println(unit);
+			}
+		}
+		
 	} // >>>>>>>>>>end of psvm<<<<<<<<<<
 } // >>>>>>>>>>end of class DegreeApp<<<<<<<<<<
