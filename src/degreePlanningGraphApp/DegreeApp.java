@@ -125,7 +125,12 @@ public class DegreeApp
 					System.out.println(unit);
 				}
 			}
-		}
+			
+			// Allocate units to study periods
+			List<List<String>> studyPeriods = allocateUnitsToStudyPeriods(topologicalOrder, adjacencyList, maxUnits, longestPaths);
+			
+		} // >>>>>>>>>>end of topological sort actions<<<<<<<<<<
 		
 	} // >>>>>>>>>>end of psvm<<<<<<<<<<
+	
 } // >>>>>>>>>>end of class DegreeApp<<<<<<<<<<
