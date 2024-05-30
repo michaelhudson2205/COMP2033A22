@@ -135,7 +135,18 @@ public class DegreeApp
 				ensureLongestPathOrder(studyPeriods, longestPath);
 			}
 			
+			// Print study periods
+			System.out.println("\nStudy Periods:");
+			for (int i = 0; i < studyPeriods.size(); i++)
+			{
+				System.out.println("Study Period " + (i + 1) + ": " + studyPeriods.get(i));
+			}
+			
 		} // >>>>>>>>>>end of topological sort actions<<<<<<<<<<
+		else
+		{
+			System.out.println("The graph contains a cycle and cannot be topologically sorted");
+		}
 		
 	} // >>>>>>>>>>end of psvm<<<<<<<<<<
 	
