@@ -106,6 +106,13 @@ public class DegreeApp
 			{
 				System.out.println(unit);
 			}
+			
+			// Print the adjacency list
+			System.out.println("\nAdjacency List:");
+			for (Map.Entry<String, List<String>> entry : adjacencyList.entrySet())
+			{
+				System.out.println(entry.getKey() + ": " + entry.getValue());
+			}
 		}
 		
 	} // >>>>>>>>>>end of psvm<<<<<<<<<<
