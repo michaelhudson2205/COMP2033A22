@@ -103,5 +103,34 @@ public class CourseSchedulerTest
 		
 	} // >>>>>>>>>>end of testAllocateUnitsToStudyPeriods<<<<<<<<<<
 	
+	// This test ensures that the longest path order is maintained in the study periods.
+	@Test
+	public void testEnsureLongestPathOrder()
+	{
+		// given
+		List<List<String>> studyPeriods = new ArrayList<>();
+		studyPeriods.add(new ArrayList<>(Arrays.asList("A", "B")));
+		studyPeriods.add(new ArrayList<>(Arrays.asList("C", "D")));
+		studyPeriods.add(new ArrayList<>(Arrays.asList("E")));
+		List<String> longestPath = Arrays.asList("A", "B", "D", "E");
+		
+		// when
+		DegreeApp.ensureLongestPathOrder(studyPeriods, longestPath);
+		
+		// then
+		Map<String, Integer> unitToPeriod = new HashMap<>();
+		for (int i = 0; i < studyPeriods.size(); i++)
+		{
+			for (String unit : studyPeriods.get(i))
+			{
+				unitToPeriod.put(unit, i);
+			}
+		}
+		assertTrue(unitToPeriod.get("A") < unitToPeriod.get("B"));
+		assertTrue(unitToPeriod.get("B") < unitToPeriod.get("D"));
+		assertTrue(unitToPeriod.get("D") < unitToPeriod.get("E"));
+		
+	} // >>>>>>>>>>end of testEnsureLongestPathOrder<<<<<<<<<<
+	
 	
 } // >>>>>>>>>>end of class CourseSchedulerTest<<<<<<<<<<
