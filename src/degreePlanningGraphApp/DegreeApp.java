@@ -327,4 +327,16 @@ public class DegreeApp
 		
 	}// >>>>>>>>>>end of allocateUnitsToStudyPeriods method<<<<<<<<<<
 	
+	private static void ensureLongestPathOrder(List<List<String>> studyPeriods, List<String> longestPath)
+	{
+		Map<String, Integer> unitToPeriod = new HashMap<>();
+		for (int i = 0; i < studyPeriods.size(); i++)
+		{
+			for (String unit : studyPeriods.get(i))
+			{
+				unitToPeriod.put(unit, i);
+			}
+		}
+	}
+	
 } // >>>>>>>>>>end of class DegreeApp<<<<<<<<<<
