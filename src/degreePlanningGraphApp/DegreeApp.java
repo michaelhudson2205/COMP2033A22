@@ -219,6 +219,24 @@ public class DegreeApp
 			}
 			longestDistances.put(startUnit, 0);
 			
+			// Calculate the longest paths from startUnit
+			for (String unit : topologicalOrder)
+			{
+				if (longestDistances.get(unit) == Integer.MIN_VALUE)
+				{
+					longestDistances.put(unit, 0);
+				}
+				
+				for (String neighbour : adjacencyList.get(unit))
+				{
+					if (longestDistances.get(neighbour) < longestDistances.get(unit) + 1)
+					{
+						longestDistances.put(neighbour, longestDistances.get(unit) + 1);
+						predecessors.put(neighbour, unit);
+					}
+				}
+			}
+			
 			
 		}
 		
