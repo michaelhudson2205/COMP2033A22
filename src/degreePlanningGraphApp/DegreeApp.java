@@ -210,6 +210,18 @@ public class DegreeApp
 		Map<String, String> predecessors = new HashMap<>();
 		List<List<String>> longestPaths = new ArrayList<>();
 		
-	} // >>>>>>>>>>end of findAllLongestPaths<<<<<<<<<<
+		for (String startUnit : topologicalOrder)
+		{
+			// Initialise distances to negative infinity
+			for (String unit : topologicalOrder)
+			{
+				longestDistances.put(unit, Integer.MIN_VALUE);
+			}
+			longestDistances.put(startUnit, 0);
+			
+			
+		}
+		
+	} // >>>>>>>>>>end of findAllLongestPaths method<<<<<<<<<<
 	
 } // >>>>>>>>>>end of class DegreeApp<<<<<<<<<<
