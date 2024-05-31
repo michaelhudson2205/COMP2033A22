@@ -151,7 +151,7 @@ public class DegreeApp
 		
 	} // >>>>>>>>>>end of psvm<<<<<<<<<<
 	
-	private static List<String> topologicalSort(List<String> allUnits, Map<String, List<String>> adjacencyList)
+	public static List<String> topologicalSort(List<String> allUnits, Map<String, List<String>> adjacencyList)
 	{
 		Map<String, Integer> inDegree = new HashMap<>();
 		for (String unit : allUnits)
@@ -205,7 +205,7 @@ public class DegreeApp
 		
 	} // >>>>>>>>>>end of topologicalSort method<<<<<<<<<<
 	
-	private static List<List<String>> findAllLongestPaths(List<String> topologicalOrder, Map<String, List<String>> adjacencyList)
+	public static List<List<String>> findAllLongestPaths(List<String> topologicalOrder, Map<String, List<String>> adjacencyList)
 	{
 		Map<String, Integer> longestDistances = new HashMap<>();
 		Map<String, String> predecessors = new HashMap<>();
@@ -267,7 +267,7 @@ public class DegreeApp
 		
 	} // >>>>>>>>>>end of findAllLongestPaths method<<<<<<<<<<
 	
-	private static List<List<String>> allocateUnitsToStudyPeriods(List<String> topologicalOrder, Map<String, List<String>> adjacencyList, int maxUnits, List<List<String>> longestPaths)
+	public static List<List<String>> allocateUnitsToStudyPeriods(List<String> topologicalOrder, Map<String, List<String>> adjacencyList, int maxUnits, List<List<String>> longestPaths)
 	{
 		List<List<String>> studyPeriods = new ArrayList<>();
 		Map<String, Integer> unitPeriod = new HashMap<>();
@@ -328,7 +328,7 @@ public class DegreeApp
 		
 	}// >>>>>>>>>>end of allocateUnitsToStudyPeriods method<<<<<<<<<<
 	
-	private static void ensureLongestPathOrder(List<List<String>> studyPeriods, List<String> longestPath)
+	public static void ensureLongestPathOrder(List<List<String>> studyPeriods, List<String> longestPath)
 	{
 		Map<String, Integer> unitToPeriod = new HashMap<>();
 		for (int i = 0; i < studyPeriods.size(); i++)
