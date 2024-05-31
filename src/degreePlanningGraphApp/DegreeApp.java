@@ -305,6 +305,10 @@ public class DegreeApp
 					studyPeriods.add(new ArrayList<>());
 				}
 			}
+			
+			// Allocate the unit to the found period
+			studyPeriods.get(period).add(unit);
+			unitPeriod.put(unit, period);
 		}
 		
 	}// >>>>>>>>>>end of allocateUnitsToStudyPeriods method<<<<<<<<<<
