@@ -19,11 +19,12 @@ public class DegreeApp
 	public static void main(String[] args)
 	{
 		// Set up for getting user input
-		String path = "C:\\Users\\micha\\Dropbox\\Uni_SA\\COMP2033\\Assessments\\A_2_2\\";
+		//String path = "C:\\Users\\micha\\Dropbox\\Uni_SA\\COMP2033\\Assessments\\A_2_2\\";
+		String path = ".\\data\\";
 		Scanner scanner = new Scanner(System.in);
 		
 		// Ask the student for the name of the input file
-		System.out.print("Enter the name of the input file: ");
+		System.out.print("Enter the name of the input file (XBDA or XBIT): ");
 		String fileName = scanner.nextLine();
 		path += fileName;
 		
