@@ -309,7 +309,21 @@ public class DegreeApp
 			// Allocate the unit to the found period
 			studyPeriods.get(period).add(unit);
 			unitPeriod.put(unit, period);
+			
+			// Reallocate units if the maxUnits constraint is violated
+			while (studyPeriods.get(period).size() > maxUnits)
+			{
+				String movedUnit = studyPeriods.get(period).remove(studyPeriods.get(period).size() - 1);
+				if (studyPeriods.size() <= period + 1)
+				{
+					studyPeriods.add(new ArrayList<>());
+				}
+				studyPeriods.get(period + 1).add(movedUnit);
+				unitPeriod.put(movedUnit, period + 1);
+			}
 		}
+		
+		return studyPeriods;
 		
 	}// >>>>>>>>>>end of allocateUnitsToStudyPeriods method<<<<<<<<<<
 	
