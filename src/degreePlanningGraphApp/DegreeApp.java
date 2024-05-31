@@ -247,7 +247,13 @@ public class DegreeApp
 				}
 			}
 			
-			
+			// Reconstruct the longest path
+			List<String> longestPath = new LinkedList<>();
+			for (String at = end; at != null; at = predecessors.get(at))
+			{
+				longestPath.add(at);
+			}
+			Collections.reverse(longestPath);
 		}
 		
 	} // >>>>>>>>>>end of findAllLongestPaths method<<<<<<<<<<
