@@ -254,7 +254,15 @@ public class DegreeApp
 				longestPath.add(at);
 			}
 			Collections.reverse(longestPath);
+			
+			// Add to the list of longest paths if it is not already present
+			if (!longestPath.isEmpty() && !longestPaths.contains(longestPath))
+			{
+				longestPaths.add(longestPath);
+			}
 		}
+		
+		return longestPaths;
 		
 	} // >>>>>>>>>>end of findAllLongestPaths method<<<<<<<<<<
 	
