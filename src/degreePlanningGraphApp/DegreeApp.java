@@ -271,6 +271,18 @@ public class DegreeApp
 		List<List<String>> studyPeriods = new ArrayList<>();
 		Map<String, Integer> unitPeriod = new HashMap<>();
 		
+		for (String unit : topologicalOrder)
+		{
+			int period = 0;
+			// Find the earliest period in which this unit can be placed
+			for (String prerequisite : adjacencyList.get(unit))
+			{
+				if (unitPeriod.containsKey(prerequisite))
+				{
+					period = Math.max(period, unitPeriod.get(prerequisite) + 1);
+				}
+			}
+		}
 		
 	}// >>>>>>>>>>end of allocateUnitsToStudyPeriods method<<<<<<<<<<
 	
