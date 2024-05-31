@@ -282,6 +282,19 @@ public class DegreeApp
 					period = Math.max(period, unitPeriod.get(prerequisite) + 1);
 				}
 			}
+			
+			// Ensure no period exceeds maxUnits and prerequisites are met
+			while (studyPeriods.size() <= period || (studyPeriods.size() > period && studyPeriods.get(period).size() >= maxUnits))
+			{
+				if (studyPeriods.size() <= period)
+				{
+					studyPeriods.add(new ArrayList<>());
+				}
+				else
+				{
+					period++;
+				}
+			}
 		}
 		
 	}// >>>>>>>>>>end of allocateUnitsToStudyPeriods method<<<<<<<<<<
