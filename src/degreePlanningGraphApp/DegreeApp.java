@@ -266,4 +266,12 @@ public class DegreeApp
 		
 	} // >>>>>>>>>>end of findAllLongestPaths method<<<<<<<<<<
 	
+	private static List<List<String>> allocateUnitsToStudyPeriods(List<String> topologicalOrder, Map<String, List<String>> adjacencyList, int maxUnits, List<List<String>> longestPaths)
+	{
+		List<List<String>> studyPeriods = new ArrayList<>();
+		Map<String, Integer> unitPeriod = new HashMap<>();
+		
+		
+	}// >>>>>>>>>>end of allocateUnitsToStudyPeriods method<<<<<<<<<<
+	
 } // >>>>>>>>>>end of class DegreeApp<<<<<<<<<<
