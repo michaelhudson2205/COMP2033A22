@@ -77,7 +77,7 @@ public class CourseSchedulerTest
 		// when
 		List<String> sortedUnits = DegreeApp.topologicalSort(allUnits, adjacencyList);
 		List<List<String>> longestPaths = DegreeApp.findAllLongestPaths(sortedUnits, adjacencyList);
-		int maxUnits = 2;
+		int maxUnits = 1;
 		List<List<String>> studyPeriods = DegreeApp.allocateUnitsToStudyPeriods(sortedUnits, adjacencyList, maxUnits, longestPaths);
 		
 		// then
@@ -97,8 +97,8 @@ public class CourseSchedulerTest
 		}
 		assertTrue(unitToPeriod.get("A") < unitToPeriod.get("B"));
 		assertTrue(unitToPeriod.get("A") < unitToPeriod.get("C"));
-//		assertTrue(unitToPeriod.get("B") < unitToPeriod.get("D"));
-//		assertTrue(unitToPeriod.get("C") < unitToPeriod.get("D"));
+		assertTrue(unitToPeriod.get("B") < unitToPeriod.get("D"));
+		assertTrue(unitToPeriod.get("C") < unitToPeriod.get("D"));
 		assertTrue(unitToPeriod.get("D") < unitToPeriod.get("E"));
 		
 	} // >>>>>>>>>>end of testAllocateUnitsToStudyPeriods<<<<<<<<<<
