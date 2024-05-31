@@ -337,6 +337,26 @@ public class DegreeApp
 				unitToPeriod.put(unit, i);
 			}
 		}
-	}
+		
+		for (int i = 0; i < longestPath.size() - 1; i++)
+		{
+			String currentUnit = longestPath.get(i);
+			String nextUnit = longestPath.get(i + 1);
+			
+			int currentPeriod = unitToPeriod.get(currentUnit);
+			int nextPeriod = unitToPeriod.get(nextUnit);
+			
+			if (currentPeriod >= nextPeriod)
+			{
+				studyPeriods.get(nextPeriod).remove(nextUnit); // Remove from the earlier period
+				while (studyPeriods.size() <= currentPeriod + 1)
+				{
+					studyPeriods.add(new ArrayList<>());
+				}
+				studyPeriods.get(currentPeriod + 1).add(nextUnit);
+				unitToPeriod.put(nextUnit, currentPeriod + 1);
+			}
+		}
+	} // >>>>>>>>>>end of ensureLongestPathOrder method<<<<<<<<<<
 	
 } // >>>>>>>>>>end of class DegreeApp<<<<<<<<<<
