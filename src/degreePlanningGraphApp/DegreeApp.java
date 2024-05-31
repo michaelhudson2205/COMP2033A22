@@ -237,6 +237,16 @@ public class DegreeApp
 				}
 			}
 			
+			// Find the end of the longest path
+			String end = startUnit;
+			for (String unit : topologicalOrder)
+			{
+				if (longestDistances.get(unit) > longestDistances.get(end))
+				{
+					end = unit;
+				}
+			}
+			
 			
 		}
 		
