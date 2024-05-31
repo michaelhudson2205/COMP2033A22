@@ -295,6 +295,16 @@ public class DegreeApp
 					period++;
 				}
 			}
+			
+			// Ensure no unit is placed in the same period as its prerequisites
+			while (studyPeriods.size() > period && studyPeriods.get(period).stream().anyMatch(prereq -> adjacencyList.get(prereq).contains(unit)))
+			{
+				period++;
+				if (studyPeriods.size() <= period)
+				{
+					studyPeriods.add(new ArrayList<>());
+				}
+			}
 		}
 		
 	}// >>>>>>>>>>end of allocateUnitsToStudyPeriods method<<<<<<<<<<
