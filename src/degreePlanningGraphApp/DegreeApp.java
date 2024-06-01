@@ -5,7 +5,7 @@
 * Author:       Michael Hudson
 * Student ID:   110369255
 * Email ID:     hudmy010@mymail.unisa.edu.au
-* AI Tool Used: ChatGPT4
+* AI Tool Used: ChatGPT4o
 * This is my own work as defined by
 *    the University's Academic Integrity Policy.
 **/

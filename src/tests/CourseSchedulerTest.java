@@ -1,3 +1,14 @@
+/**
+* File:         CourseSchedulerTest.java
+* Description:  Project 2: Degree Planning Graph Applications
+* 				Watch the video at: 
+* Author:       Michael Hudson
+* Student ID:   110369255
+* Email ID:     hudmy010@mymail.unisa.edu.au
+* AI Tool Used: ChatGPT4o
+* This is my own work as defined by
+*    the University's Academic Integrity Policy.
+**/
 package tests;
 
 import static org.junit.Assert.*;
