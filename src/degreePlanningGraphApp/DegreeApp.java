@@ -1,3 +1,14 @@
+/**
+* File:         DegreeApp.java
+* Description:  Project 2: Degree Planning Graph Applications
+* 				Watch the video at: 
+* Author:       Michael Hudson
+* Student ID:   110369255
+* Email ID:     hudmy010@mymail.unisa.edu.au
+* AI Tool Used: ChatGPT4
+* This is my own work as defined by
+*    the University's Academic Integrity Policy.
+**/
 package degreePlanningGraphApp;
 
 import java.io.BufferedReader;
@@ -151,6 +162,14 @@ public class DegreeApp
 		
 	} // >>>>>>>>>>end of psvm<<<<<<<<<<
 	
+	/**
+	 * Returns a list of all course units in topological sort order.
+	 * This list is essential for the correct ordering of units
+	 * over the course schedule.
+	 * @param allUnits the first line of the input file containing all units to be completed for the course
+	 * @param adjacencyList represents the DAG of course units and the dependencies
+	 * @return the topologically sorted list of all units
+	 */
 	public static List<String> topologicalSort(List<String> allUnits, Map<String, List<String>> adjacencyList)
 	{
 		Map<String, Integer> inDegree = new HashMap<>();
@@ -205,6 +224,12 @@ public class DegreeApp
 		
 	} // >>>>>>>>>>end of topologicalSort method<<<<<<<<<<
 	
+	/**
+	 * Returns an ordered list of units constituting the longest path through the DAG
+	 * @param topologicalOrder a list of all units topologically ordered
+	 * @param adjacencyList list representation of DAG
+	 * @return a list of lists, where each list contains an instance of a longest path
+	 */
 	public static List<List<String>> findAllLongestPaths(List<String> topologicalOrder, Map<String, List<String>> adjacencyList)
 	{
 		Map<String, Integer> longestDistances = new HashMap<>();
@@ -267,6 +292,16 @@ public class DegreeApp
 		
 	} // >>>>>>>>>>end of findAllLongestPaths method<<<<<<<<<<
 	
+	/**
+	 * This method ensures that each unit is allocated to the earliest
+	 * possible period without exceeding the maxUnits constraint and
+	 * respecting prerequisite dependencies.
+	 * @param topologicalOrder all units sorted in topological order
+	 * @param adjacencyList representation of the DAG
+	 * @param maxUnits the maximum number of units that can be studied concurrently
+	 * @param longestPaths the longest path of vertices through the DAG
+	 * @return a list of lists containing units allocated to study periods
+	 */
 	public static List<List<String>> allocateUnitsToStudyPeriods(List<String> topologicalOrder, Map<String, List<String>> adjacencyList, int maxUnits, List<List<String>> longestPaths)
 	{
 		List<List<String>> studyPeriods = new ArrayList<>();
@@ -328,6 +363,12 @@ public class DegreeApp
 		
 	}// >>>>>>>>>>end of allocateUnitsToStudyPeriods method<<<<<<<<<<
 	
+	/**
+	 * This method ensures that units in the longest paths are correctly
+	 * ordered across study periods by reassigning them if necessary.
+	 * @param studyPeriods the list of lists containing units in study periods
+	 * @param longestPath the list containing the longest path through the DAG
+	 */
 	public static void ensureLongestPathOrder(List<List<String>> studyPeriods, List<String> longestPath)
 	{
 		Map<String, Integer> unitToPeriod = new HashMap<>();
