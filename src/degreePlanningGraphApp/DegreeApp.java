@@ -1,7 +1,7 @@
 /**
 * File:         DegreeApp.java
 * Description:  Project 2: Degree Planning Graph Applications
-* 				Watch the video at: 
+* 				Watch the video at: https://www.youtube.com/watch?v=p7dSHRqIu5k
 * Author:       Michael Hudson
 * Student ID:   110369255
 * Email ID:     hudmy010@mymail.unisa.edu.au
